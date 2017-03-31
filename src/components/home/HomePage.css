@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+
+}
+
+
+
+.pic1 {
+    height: 250px;
+    width: 25%;
+    border: #ffda2c;
+    border-style: groove;
+    border-width: thick 50px;
+}
+
+.pic2 {
+    height: 325px;
+    width: 25%;
+    border: #ffda2c;
+    border-style: groove;
+    border-width: thick 50px;
+}
+
+.pic3 {
+    height: 250px;
+    width: 25%;
+    border: #ffda2c;
+    border-style: groove;
+    border-width: thick 50px;
+}
+
+

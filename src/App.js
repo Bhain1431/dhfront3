@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../public/Pics/IMG_DHlogo.jpg';
 import './App.css';
 //import ReactDOM from "react-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -20,8 +20,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>DH Pottery & Glass</h2>
+          <img src={logo} className="App-logo" />
+            <h2>DH Pottery & Glass</h2>
         </div>
           {this.props.children}
         <p className="App-intro">

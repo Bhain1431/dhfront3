@@ -25,24 +25,24 @@ const styles = {
 
 const tilesData   = [
     {
-        img: 'images/grid-list/00-52-29-429_640.jpg',
-        title: 'Breakfast',
-        author: 'jill111',
+        img: 'Pics/IMG_claystuff.jpg',
+        title: 'CLAY TYPE',
+        author: 'brad',
     },
     {
-        img: 'images/grid-list/burger-827309_640.jpg',
-        title: 'Tasty burger',
-        author: 'pashminu',
+        img: 'Pics/IMG_twocups.jpg',
+        title: 'GLAZE TYPE',
+        author: 'brad',
     },
     {
-        img: 'images/grid-list/camera-813814_640.jpg',
-        title: 'Camera',
-        author: 'Danson67',
+        img: 'Pics/IMG_leaf.jpg',
+        title: 'MOLD TYPE',
+        author: 'brad',
     },
     {
-        img: 'images/grid-list/morning-819362_640.jpg',
-        title: 'Morning',
-        author: 'fancycrave1',
+        img: 'Pics/IMG_glassflower.jpg',
+        title: 'GLASS',
+        author: 'brad',
     },
 ];
 
