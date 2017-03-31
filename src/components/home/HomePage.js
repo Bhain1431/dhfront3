@@ -15,7 +15,7 @@ class HomePage extends Component {
         return(
             <div>
                 <Link to="create"> <RaisedButton label="Create" style={style}></RaisedButton></Link>
-                <RaisedButton label="Products" style={style}> </RaisedButton>
+                <Link to="products"><RaisedButton label="Products" style={style}> </RaisedButton></Link>
             </div>
         )
     }

@@ -12,7 +12,7 @@ injectTapEventPlugin();
 
 ReactDOM.render(
     <MuiThemeProvider>
-        <Router history={history} routes={routes} />
+        <Router history={browserHistory} routes={routes} />
     </MuiThemeProvider>,
     document.getElementById('root')
 );
