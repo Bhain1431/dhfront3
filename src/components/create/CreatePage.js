@@ -1,71 +1,77 @@
 import React, {Component} from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from "react-router";
-
-const style = {
-    margin: 12,
-}
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import claystuff from "../../../public/Pics/IMG_claystuff.jpg";
+import leaf from "../../../public/Pics/IMG_leaf.jpg";
+import glassflower from "../../../public/Pics/IMG_glassflower.jpg";
+import twocups from "../../../public/Pics/IMG_twocups.jpg";
+import "./CreatePage.css";
 
 const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    },
-    gridList: {
-        width: 500,
-        height: 450,
-        overflowY: 'auto',
-    },
+    customWidth: {
+        width: 200,
+    }
+}
+const style = {
+    margin: 12,
 };
 
-const tilesData   = [
-    {
-        img: 'Pics/IMG_claystuff.jpg',
-        title: 'CLAY TYPE',
-        author: 'brad',
-    },
-    {
-        img: 'Pics/IMG_twocups.jpg',
-        title: 'GLAZE TYPE',
-        author: 'brad',
-    },
-    {
-        img: 'Pics/IMG_leaf.jpg',
-        title: 'MOLD TYPE',
-        author: 'brad',
-    },
-    {
-        img: 'Pics/IMG_glassflower.jpg',
-        title: 'GLASS',
-        author: 'brad',
-    },
-];
+
 
 class CreatePage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {claytype: 1, moldtype: 1, glazetype: 1, glass: 1};
+    }
+
+    handleClay = (event, index, claytype) => this.setState({claytype});
+    handleMold = (event, index, moldtype) => this.setState({moldtype});
+    handleGlaze = (event, index, glazetype) => this.setState({glazetype});
+    handleGlass = (event, index, glass) => this.setState({glass});
+
+
+
     render() {
         return <div style={styles.root}>
-            <GridList
-                cellHeight={180}
-                style={styles.gridList}>
 
-                <Subheader>December</Subheader>
-                {tilesData.map((tile) => (
-                    <GridTile
-                        key={tile.img}
-                        title={tile.title}
-                        subtitle={<span>by <b>{tile.author}</b></span>}
-                        actionIcon={<IconButton><StarBorder color="white"/></IconButton>}>
-                        <img src={tile.img}/>
-                    </GridTile>
-                ))}
-            </GridList>
+                <Subheader>Create Your Pottery Or Glass</Subheader>
+            <img className="pic4" src={claystuff} />
+                <DropDownMenu value={this.state.claytype} onChange={this.handleClay}>
+                    <MenuItem value={1} primaryText="ClayType" />
+                    <MenuItem value={2} primaryText="RedClay ^06" />
+                    <MenuItem value={3} primaryText="WhiteSlip ^06" />
+                    <MenuItem value={4} primaryText="StonewareWhite ^6" />
+                </DropDownMenu>
+            <img className="pic5" src={leaf} />
+                <DropDownMenu value={this.state.moldtype} onChange={this.handleMold}>
+                    <MenuItem value={1} primaryText="MoldType" />
+                    <MenuItem value={2} primaryText="JewelryBox" />
+                    <MenuItem value={3} primaryText="Leaf" />
+                    <MenuItem value={4} primaryText="Pitcher" />
+                    <MenuItem value={5} primaryText="Tray" />
+                </DropDownMenu>
+            <img className="pic6" src={twocups} />
+                <DropDownMenu value={this.state.glazetype} onChange={this.handleGlaze}>
+                    <MenuItem value={1} primaryText="GlazeType" />
+                    <MenuItem value={2} primaryText="Red" />
+                    <MenuItem value={3} primaryText="Yellow" />
+                    <MenuItem value={4} primaryText="Otmeal" />
+                    <MenuItem value={5} primaryText="IndigoFloat" />
+                </DropDownMenu>
+            <img className="pic7" src={glassflower} />
+                <DropDownMenu value={this.state.glass} onChange={this.handleGlass}>
+                    <MenuItem value={1} primaryText="Glass" />
+                    <MenuItem value={2} primaryText="Leaf" />
+                    <MenuItem value={3} primaryText="Butterfly" />
+                    <MenuItem value={4} primaryText="Flower" />
+                    <MenuItem value={5} primaryText="Rose" />
+                </DropDownMenu><br />
             <Link to="home"> <RaisedButton label="Home" style={style}></RaisedButton></Link>
         </div>
     }
-};
+}
 export default CreatePage;
