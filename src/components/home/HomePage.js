@@ -7,7 +7,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import "./HomePage.css"
 import chipbowl from "../../../public/Pics/IMG_chipbowl.jpg";
 import boxscups from "../../../public/Pics/IMG_boxscups.jpg";
-import glassleaf from "../../../public/Pics/IMG_glassleaf.jpg";
+import glassleaf from "../../../public/Pics/IMG_gleaf.jpg";
 
 
 const style = {

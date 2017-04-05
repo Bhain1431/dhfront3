@@ -6,6 +6,7 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import RaisedButton from "material-ui/RaisedButton";
 import { Link } from "react-router";
 
+
 const style = {
     margin: 12,
 }
@@ -28,23 +29,23 @@ const styles = {
 
 const tilesData = [
     {
-        img: 'images/grid-list/00-52-29-429_640.jpg',
-        title: 'Breakfast',
+        img: '/Pics/IMG_box.jpg',
+        title: '$19.99',
         author: 'jill111',
     },
     {
-        img: 'images/grid-list/burger-827309_640.jpg',
-        title: 'Tasty burger',
+        img: '/Pics/IMG_gleaf.jpg',
+        title: '$14.99',
         author: 'pashminu',
     },
     {
-        img: 'images/grid-list/camera-813814_640.jpg',
-        title: 'Camera',
+        img: '/Pics/IMG_teapot.jpg',
+        title: '$135.00',
         author: 'Danson67',
     },
     {
-        img: 'images/grid-list/morning-819362_640.jpg',
-        title: 'Morning',
+        img: '/Pics/IMG_glassbuterfly.jpg',
+        title: '$19.99',
         author: 'fancycrave1',
     }
 ];

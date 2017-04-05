@@ -1,7 +1,7 @@
 
 .pic4 {
     height: 200px;
-    width: 175px;
+    width: 100px;
     border: #ffda2c;
     border-style: groove;
     border-width: thick 30px;
@@ -9,7 +9,7 @@
 
 .pic5 {
     height: 200px;
-    width: 125px;
+    width: 100px;
     border: #b24836;
     border-style: groove;
     border-width: thick 30px;
@@ -17,14 +17,14 @@
 
 .pic6 {
     height: 200px;
-    width: 175px;
+    width: 100px;
     border: #b29e57;
     border-style: groove;
     border-width: thick 30px;
 }
 .pic7 {
     height: 200px;
-    width: 125px;
+    width: 100px;
     border: #62b228;
     border-style: groove;
     border-width: thick 30px;
