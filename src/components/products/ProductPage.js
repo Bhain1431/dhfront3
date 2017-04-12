@@ -1,11 +1,13 @@
-
-import React, { Component} from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import React, {Component} from "react";
+import {GridList, GridTile} from "material-ui/GridList";
+import IconButton from "material-ui/IconButton";
+import StarBorder from "material-ui/svg-icons/toggle/star-border";
 import RaisedButton from "material-ui/RaisedButton";
-import { Link } from "react-router";
-
+import {Link} from "react-router";
+import axios from "axios";
+import DropDownMenu from "material-ui/DropDownMenu";
+import MenuItem from "material-ui/MenuItem";
+import Storage from "../localStorage.js";
 
 const style = {
     margin: 12,
@@ -31,30 +33,76 @@ const tilesData = [
     {
         img: '/Pics/IMG_box.jpg',
         title: '$19.99',
-        author: 'jill111',
+        author: 'brad',
     },
     {
         img: '/Pics/IMG_gleaf.jpg',
         title: '$14.99',
-        author: 'pashminu',
+        author: 'brad',
     },
     {
         img: '/Pics/IMG_teapot.jpg',
         title: '$135.00',
-        author: 'Danson67',
+        author: 'brad',
     },
     {
         img: '/Pics/IMG_glassbuterfly.jpg',
         title: '$19.99',
-        author: 'fancycrave1',
+        author: 'brad',
     }
 ];
 
+
 class ProductPage extends Component {
+
+
+    constructor(props) {
+        super(props);
+        this.state = {potterySelected: 0, pottery: []};
+
+
+    }
+    handleAdd = (product) => {
+        const cart = Storage.get('CART');
+
+        if (cart !== null) {
+            if (cart.some(c => c._id === product._id)) {
+                const item = cart.filter(p => p._id === product._id)
+                    .map(p => ({
+                        ...p,
+                        quantity: p.quantity + 1
+                    }))
+                    .reduce((prev, current) => current);
+
+                Storage.set('CART', [...cart.filter(p => p._id !== product._id), item])
+            } else {
+                Storage.set('CART', [...cart, {...product, quantity: 1}]);
+            }
+        } else {
+            Storage.set('CART', [{...product, quantity: 1}]);
+        }
+
+    };
+
+
+    componentDidMount() {
+
+        axios.get('http://localhost:4000/pottery')
+            .then(result => this.setState({pottery: result.data, potterySelected: result.data[0]._id}))
+            .catch(error => console.log(error))
+
+    }
+
     render() {
-        return(
+        console.log(this.state)
+        return (
 
             <div style={styles.root}>
+                <DropDownMenu value={this.state.potterySelected}
+                              onChange={(e,index, value) => { this.setState({potterySelected:value})}}>
+                    {this.state.pottery.map(p => (<MenuItem key={p._id} value={p._id} primaryText={`${p.pottype}  ${p.price}`}/>))}
+                </DropDownMenu>
+                <button onClick={e => this.handleAdd(this.state.pottery.filter(p => p._id === this.state.potterySelected).reduce((prev, current) => current))}>Add to Cart</button>
                 <GridList style={styles.gridList} cols={2.2}>
                     {tilesData.map((tile) => (
                         <GridTile
@@ -71,6 +119,7 @@ class ProductPage extends Component {
             </div>
         )
     }
-};
+}
+;
 
 export default ProductPage;

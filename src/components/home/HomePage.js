@@ -20,6 +20,7 @@ class HomePage extends Component {
             <div>
                 <Link to="create"> <RaisedButton label="Create" style={style}></RaisedButton></Link>
                 <Link to="products"><RaisedButton label="Products" style={style}> </RaisedButton></Link>
+                <Link to="checkout"><RaisedButton label="CheckOut" style={style}> </RaisedButton></Link>
                 <div className="container">
                     <img className="pic1" src={chipbowl} />
                     <img className= "pic2" src={boxscups} />
