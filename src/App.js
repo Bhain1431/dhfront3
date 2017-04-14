@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../public/Pics/IMG_DHlogo.jpg';
 import './App.css';
+import Footer from './components/Footer.js';
 //import ReactDOM from "react-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import HomePage from "./components/home/HomePage";
@@ -27,6 +28,7 @@ class App extends Component {
         <p className="App-intro">
           Welcome to DH Pottery & Glass where you can make custom pottery, or just look around enjoy!
         </p>
+          <Footer />
       </div>
 
     );

@@ -81,28 +81,24 @@ class ProductPage extends Component {
         } else {
             Storage.set('CART', [{...product, quantity: 1}]);
         }
-
     };
-
-
     componentDidMount() {
 
         axios.get('http://localhost:4000/pottery')
             .then(result => this.setState({pottery: result.data, potterySelected: result.data[0]._id}))
             .catch(error => console.log(error))
-
     }
-
     render() {
         console.log(this.state)
         return (
 
             <div style={styles.root}>
+                <Link to="checkout"> <RaisedButton label="Check Out" style={style}></RaisedButton></Link>
                 <DropDownMenu value={this.state.potterySelected}
                               onChange={(e,index, value) => { this.setState({potterySelected:value})}}>
                     {this.state.pottery.map(p => (<MenuItem key={p._id} value={p._id} primaryText={`${p.pottype}  ${p.price}`}/>))}
                 </DropDownMenu>
-                <button onClick={e => this.handleAdd(this.state.pottery.filter(p => p._id === this.state.potterySelected).reduce((prev, current) => current))}>Add to Cart</button>
+                <RaisedButton onClick={e => this.handleAdd(this.state.pottery.filter(p => p._id === this.state.potterySelected).reduce((prev, current) => current))} label="Add to Cart"></RaisedButton>
                 <GridList style={styles.gridList} cols={2.2}>
                     {tilesData.map((tile) => (
                         <GridTile
