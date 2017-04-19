@@ -21,23 +21,13 @@ class Storage extends Component {
         return localStorage.setItem(name, JSON.stringify(value));
     }
 
-    // static all() {
-    //   localStorage.length
-    // }
+
 
     static clear() {
         localStorage.clear();
     }
 
-    // componentWillMount() {
-    //   this.save();
-    // }
-    //
-    // save() {
-    //   const value = this.props.useRaw ? this.props.value : JSON.stringify(this.props.value);
-    //   console.log(value);
-    //   Storage.set(this.props.name, value);
-    // }
+
 
     render() {
         return null;
@@ -45,11 +35,5 @@ class Storage extends Component {
 
 }
 
-// Storage.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   value: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.array]),
-//   useRaw: PropTypes.bool,
-//   autoSave: PropTypes.bool
-// };
 
 export default Storage;

@@ -84,6 +84,12 @@ class ProductPage extends Component {
     };
     componentDidMount() {
 
+        const cart = Storage.get('CART');
+        if (cart === null){
+            Storage.set('CART', [])
+        };
+
+
         axios.get('http://localhost:4000/pottery')
             .then(result => this.setState({pottery: result.data, potterySelected: result.data[0]._id}))
             .catch(error => console.log(error))
