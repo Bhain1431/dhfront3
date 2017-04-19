@@ -90,7 +90,7 @@ class ProductPage extends Component {
         };
 
 
-        axios.get('http://localhost:4000/pottery')
+        axios.get('https://agile-castle-74433.herokuapp.com/pottery')
             .then(result => this.setState({pottery: result.data, potterySelected: result.data[0]._id}))
             .catch(error => console.log(error))
     }

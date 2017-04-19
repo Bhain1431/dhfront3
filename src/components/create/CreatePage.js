@@ -34,9 +34,9 @@ class CreatePage extends Component {
     handleGlaze = (event, index, glazetype) => this.setState({glazetype});
     handleGlass = (event, index, glass) => this.setState({glass});
     handleSubmit = () => {
-        console.log(this.state)
+        alert('Your order for has been submitted');
 
-        axios.post('http://localhost:4000/orders',this.state)
+        axios.post('https://agile-castle-74433.herokuapp.com/orders',this.state)
             .then(result => console.log(result))
             .catch(error => console.log(error))
     };
