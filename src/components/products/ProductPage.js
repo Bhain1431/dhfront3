@@ -98,6 +98,7 @@ class ProductPage extends Component {
         console.log(this.state)
         return (
 
+
             <div style={styles.root}>
                 <Link to="checkout"> <RaisedButton label="Check Out" style={style}></RaisedButton></Link>
                 <DropDownMenu value={this.state.potterySelected}

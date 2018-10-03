@@ -5,7 +5,6 @@ import React, { Component} from "react";
 import { Link } from "react-router";
 import RaisedButton from "material-ui/RaisedButton";
 import "./HomePage.css"
-import chipbowl from "../../../public/Pics/IMG_chipbowl.jpg";
 import boxscups from "../../../public/Pics/IMG_boxscups.jpg";
 import glassleaf from "../../../public/Pics/IMG_gleaf.jpg";
 
@@ -22,8 +21,8 @@ class HomePage extends Component {
                 <Link to="products"><RaisedButton label="Products" style={style}> </RaisedButton></Link>
                 <Link to="checkout"><RaisedButton label="CheckOut" style={style}> </RaisedButton></Link>
                 <div className="container">
-                    <img className="pic1" src={chipbowl} />
-                    <img className= "pic2" src={boxscups} />
+                    <img className="pic1" src="/Pics/IMG_chipbowl.jpg" />
+                    <img className="pic2" src={boxscups} />
                     <img className="pic3" src={glassleaf} />
                 </div>
             </div>
